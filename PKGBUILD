@@ -1,21 +1,22 @@
+# Maintainer: Felipe Alfonso Gonzalez <f.alfonso@res-ear.ch>
 pkgname=term-notes
 pkgver=1.0.0
 pkgrel=1
 pkgdesc="Terminal-based note-taking application"
 arch=('x86_64')
-url="https://github.com/felipealfonsog/term-notes"
+url="https://github.com/felipealfonsog/TermNotes"
 license=('MIT')
 depends=('gcc' 'vim' 'nano')
 
-source=("https://github.com/felipealfonsog/term-notes/archive/v$pkgver.tar.gz")
+source=("https://github.com/felipealfonsog/TermNotes/archive/v$pkgver.tar.gz")
 
 build() {
-  cd "$srcdir/term-notes-$pkgver"
+  cd "$srcdir/TermNotes-$pkgver"
   make
 }
 
 package() {
-  cd "$srcdir/term-notes-$pkgver"
+  cd "$srcdir/TermNotes-$pkgver"
   install -Dm755 term_notes "$pkgdir/usr/bin/term_notes"
 }
 
