@@ -1,3 +1,27 @@
+    /*************************************
+     Terminal Notes Utility written in C
+    *************************************
+    *  Simple: Create and manage notes from the terminal
+    *************************************
+    * Developed and engineered by 
+    * Felipe Alfonso Gonzalez <f.alfonso@res-ear.ch>
+    * Computer Science Engineer
+    * Chile
+    *************************************
+    *************************************
+     * Instructions to create the setup binary:
+     *
+     * 1. Compile the source code:
+     *    gcc -o setup setup.c
+     *
+     * 2. Run the compiled binary:
+     *    ./setup
+     *
+     * Please make sure to have the necessary dependencies installed before compiling the code.
+     * Refer to the documentation for more information.
+     *************************************/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
