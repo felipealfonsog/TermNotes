@@ -10,77 +10,292 @@ typedef struct {
     char content[100];
 } Note;
 
+void createFiles() {
+    FILE *file = fopen("notes.txt", "r");
+    if (file == NULL) {
+        file = fopen("notes.txt", "w");
+        if (file != NULL) {
+            fclose(file);
+            printf("Created notes.txt\n");
+        } else {
+            fprintf(stderr, "Unable to create notes.txt\n");
+        }
+    } else {
+        fclose(file);
+    }
+}
+
 void addNote() {
     fflush(stdin);
 
-    printf("Enter the note: ");
+    printf("Enter the note content: ");
     char content[100];
     fgets(content, sizeof(content), stdin);
 
+    printf("Choose the editor (1. Nano, 2. Vim): ");
+    int editorChoice;
+    scanf("%d", &editorChoice);
+
+    char tempFileName[20];
+    sprintf(tempFileName, "temp_note_%d.txt", getpid());
+
+    FILE *tempFile = fopen(tempFileName, "w");
+    if (tempFile == NULL) {
+        fprintf(stderr, "Unable to create temporary file.\n");
+        return;
+    }
+    fputs(content, tempFile);
+    fclose(tempFile);
+
+    char command[100];
+    if (editorChoice == 1) {
+        sprintf(command, "nano %s", tempFileName);
+    } else if (editorChoice == 2) {
+        sprintf(command, "vim %s", tempFileName);
+    } else {
+        fprintf(stderr, "Invalid editor choice.\n");
+        remove(tempFileName);
+        return;
+    }
+
+    system(command);
+
     FILE *file = fopen("notes.txt", "a");
     if (file != NULL) {
-        int id = 1;
         fseek(file, 0, SEEK_END);
-        if (ftell(file) != 0) {
-            fseek(file, -sizeof(Note), SEEK_END);
-            Note lastNote;
-            fread(&lastNote, sizeof(Note), 1, file);
-            id = lastNote.id + 1;
-        }
+        int id = ftell(file) / sizeof(Note) + 1;
 
         Note newNote;
         newNote.id = id;
-        strcpy(newNote.content, content);
+        memset(newNote.content, 0, sizeof(newNote.content));
+
+        tempFile = fopen(tempFileName, "r");
+        if (tempFile == NULL) {
+            fprintf(stderr, "Unable to open temporary file.\n");
+            fclose(file);
+            remove(tempFileName);
+            return;
+        }
+        fgets(newNote.content, sizeof(newNote.content), tempFile);
+        fclose(tempFile);
 
         fwrite(&newNote, sizeof(Note), 1, file);
         fclose(file);
         printf("Note added successfully with ID: %d\n", id);
+
+        remove(tempFileName);
     } else {
         fprintf(stderr, "Unable to open the notes file.\n");
+        remove(tempFileName);
     }
 }
 
 void editNote() {
     fflush(stdin);
 
+    FILE *file = fopen("notes.txt", "r+");
+    if (file != NULL) {
+        Note note;
+        int count = 0;
+        while (fread(&note, sizeof(Note), 1, file) == 1) {
+            printf("%d. Note ID: %d\n", count + 1, note.id);
+            count++;
+        }
+        fclose(file);
+
+        if (count == 0) {
+            printf("No notes found.\n");
+            return;
+        }
+
+        int choice;
+        printf("Enter the note number to edit: ");
+        scanf("%d", &choice);
+
+        if (choice < 1 || choice > count) {
+            printf("Invalid note number.\n");
+            return;
+        }
+
+        int selectedID = 0;
+        file = fopen("notes.txt", "r");
+        if (file != NULL) {
+            int currentIndex = 0;
+            while (fread(&note, sizeof(Note), 1, file) == 1) {
+                currentIndex++;
+                if (currentIndex == choice) {
+                    selectedID = note.id;
+                    break;
+                }
+            }
+            fclose(file);
+        } else {
+            fprintf(stderr, "Unable to open the notes file.\n");
+            return;
+        }
+
+        file = fopen("notes.txt", "r+");
+        if (file != NULL) {
+            Note currentNote;
+            int found = 0;
+            while (fread(&currentNote, sizeof(Note), 1, file) == 1) {
+                if (currentNote.id == selectedID) {
+                    found = 1;
+
+                    printf("Choose the editor (1. Nano, 2. Vim): ");
+                    int editorChoice;
+                    scanf("%d", &editorChoice);
+
+                    char tempFileName[20];
+                    sprintf(tempFileName, "temp_note_%d.txt", getpid());
+
+                    FILE *tempFile = fopen(tempFileName, "w");
+                    if (tempFile == NULL) {
+                        fprintf(stderr, "Unable to create temporary file.\n");
+                        fclose(file);
+                        return;
+                    }
+                    fputs(currentNote.content, tempFile);
+                    fclose(tempFile);
+
+                    char command[100];
+                    if (editorChoice == 1) {
+                        sprintf(command, "nano %s", tempFileName);
+                    } else if (editorChoice == 2) {
+                        sprintf(command, "vim %s", tempFileName);
+                    } else {
+                        fprintf(stderr, "Invalid editor choice.\n");
+                        remove(tempFileName);
+                        fclose(file);
+                        return;
+                    }
+
+                    system(command);
+
+                    fseek(file, -sizeof(Note), SEEK_CUR);
+                    Note updatedNote;
+                    updatedNote.id = currentNote.id;
+                    memset(updatedNote.content, 0, sizeof(updatedNote.content));
+
+                    tempFile = fopen(tempFileName, "r");
+                    if (tempFile == NULL) {
+                        fprintf(stderr, "Unable to open temporary file.\n");
+                        fclose(file);
+                        remove(tempFileName);
+                        return;
+                    }
+                    fgets(updatedNote.content, sizeof(updatedNote.content), tempFile);
+                    fclose(tempFile);
+
+                    fwrite(&updatedNote, sizeof(Note), 1, file);
+                    fclose(file);
+                    printf("Note updated successfully.\n");
+
+                    remove(tempFileName);
+                    break;
+                }
+            }
+            if (!found) {
+                printf("Note with ID %d not found.\n", selectedID);
+            }
+        } else {
+            fprintf(stderr, "Unable to open the notes file.\n");
+        }
+    } else {
+        fprintf(stderr, "Unable to open the notes file.\n");
+    }
+}
+
+void deleteNote() {
+    fflush(stdin);
+
     int id;
-    printf("Enter the note ID to edit: ");
+    printf("Enter the note ID to delete: ");
     scanf("%d", &id);
 
-    FILE *file = fopen("notes.txt", "r+");
+    FILE *file = fopen("notes.txt", "r");
+    if (file != NULL) {
+        FILE *tempFile = fopen("temp_notes.txt", "w");
+        if (tempFile != NULL) {
+            Note note;
+            int found = 0;
+            while (fread(&note, sizeof(Note), 1, file) == 1) {
+                if (note.id != id) {
+                    fwrite(&note, sizeof(Note), 1, tempFile);
+                } else {
+                    found = 1;
+                }
+            }
+            fclose(file);
+            fclose(tempFile);
+            remove("notes.txt");
+            rename("temp_notes.txt", "notes.txt");
+            if (found) {
+                printf("Note deleted successfully.\n");
+            } else {
+                printf("Note with ID %d not found.\n", id);
+            }
+        } else {
+            fclose(file);
+            fprintf(stderr, "Unable to create the temporary file.\n");
+        }
+    } else {
+        fprintf(stderr, "Unable to open the notes file.\n");
+    }
+}
+
+void deleteAllNotes() {
+    fflush(stdin);
+
+    printf("Are you sure you want to delete all notes? (Y/N): ");
+    char confirm;
+    scanf(" %c", &confirm);
+
+    if (confirm == 'Y' || confirm == 'y') {
+        FILE *file = fopen("notes.txt", "w");
+        if (file != NULL) {
+            fclose(file);
+            printf("All notes deleted successfully.\n");
+        } else {
+            fprintf(stderr, "Unable to open the notes file.\n");
+        }
+    } else {
+        printf("Deletion canceled.\n");
+    }
+}
+
+void showAllNotes() {
+    FILE *file = fopen("notes.txt", "r");
+    if (file != NULL) {
+        Note note;
+        while (fread(&note, sizeof(Note), 1, file) == 1) {
+            printf("Note ID: %d\n", note.id);
+        }
+        fclose(file);
+    } else {
+        fprintf(stderr, "Unable to open the notes file.\n");
+    }
+}
+
+void showNote() {
+    fflush(stdin);
+
+    int id;
+    printf("Enter the note ID to show: ");
+    scanf("%d", &id);
+
+    FILE *file = fopen("notes.txt", "r");
     if (file != NULL) {
         Note note;
         int found = 0;
         while (fread(&note, sizeof(Note), 1, file) == 1) {
             if (note.id == id) {
+                printf("Note ID: %d\nContent: %s\n", note.id, note.content);
                 found = 1;
-                char tempFileName[20];
-                sprintf(tempFileName, "temp_note_%d.txt", id);
-                FILE *tempFile = fopen(tempFileName, "w");
-                if (tempFile != NULL) {
-                    fprintf(tempFile, "%s", note.content);
-                    fclose(tempFile);
-                    char nanoCommand[50];
-                    sprintf(nanoCommand, "nano %s", tempFileName);
-                    system(nanoCommand);
-                    FILE *updatedFile = fopen(tempFileName, "r");
-                    if (updatedFile != NULL) {
-                        fgets(note.content, sizeof(note.content), updatedFile);
-                        fclose(updatedFile);
-                        fseek(file, -sizeof(Note), SEEK_CUR);
-                        fwrite(&note, sizeof(Note), 1, file);
-                        fclose(file);
-                        printf("Note updated successfully.\n");
-                        remove(tempFileName);
-                    } else {
-                        fprintf(stderr, "Unable to open the temporary file.\n");
-                    }
-                } else {
-                    fprintf(stderr, "Unable to create the temporary file.\n");
-                }
                 break;
             }
         }
+        fclose(file);
         if (!found) {
             printf("Note with ID %d not found.\n", id);
         }
@@ -89,26 +304,22 @@ void editNote() {
     }
 }
 
-void showNotes() {
-    FILE *file = fopen("notes.txt", "r");
-    if (file != NULL) {
-        printf("**** Notes Menu ****\n");
-        printf("1. Add a note\n");
-        printf("2. Show all notes\n");
-        printf("3. Edit a note\n");
-        printf("4. Delete a note\n");
-        printf("0. Exit\n");
-        printf("*******************\n");
+void showNotesMenu() {
+    printf("**** Notes Menu ****\n");
+    printf("1. Add a note\n");
+    printf("2. Show all notes\n");
+    printf("3. Show a note\n");
+    printf("4. Edit a note\n");
+    printf("5. Delete a note\n");
+    printf("6. Delete all notes\n");
+    printf("0. Back\n");
+    printf("*******************\n");
+}
 
-        Note notes[MAX_NOTES];
-        int numNotes = 0;
-        while (fread(&notes[numNotes], sizeof(Note), 1, file) == 1) {
-            printf("%d. %s", notes[numNotes].id, notes[numNotes].content);
-            numNotes++;
-        }
-        fclose(file);
-
-        int option;
+void notesMenu() {
+    int option;
+    do {
+        showNotesMenu();
         printf("Enter an option: ");
         scanf("%d", &option);
 
@@ -117,13 +328,43 @@ void showNotes() {
                 addNote();
                 break;
             case 2:
-                // No additional action required to show the notes.
+                showAllNotes();
                 break;
             case 3:
-                editNote();
+                showNote();
                 break;
             case 4:
-                // Implement deleteNote() function
+                editNote();
+                break;
+            case 5:
+                deleteNote();
+                break;
+            case 6:
+                deleteAllNotes();
+                break;
+            case 0:
+                printf("Returning to the main menu.\n");
+                break;
+            default:
+                printf("Invalid option.\n");
+                break;
+        }
+    } while (option != 0);
+}
+
+void mainMenu() {
+    int option;
+    do {
+        printf("**** Main Menu ****\n");
+        printf("1. Notes\n");
+        printf("0. Exit\n");
+        printf("******************\n");
+        printf("Enter an option: ");
+        scanf("%d", &option);
+
+        switch (option) {
+            case 1:
+                notesMenu();
                 break;
             case 0:
                 printf("Goodbye.\n");
@@ -132,30 +373,14 @@ void showNotes() {
                 printf("Invalid option.\n");
                 break;
         }
-    } else {
-        fprintf(stderr, "Unable to open the notes file.\n");
-    }
+    } while (option != 0);
 }
 
 int main() {
     printf("Welcome to the Notes Manager.\n");
-    printf("2. Show all notes\n");
-    printf("0. Exit\n");
 
-    int option;
-    scanf("%d", &option);
-
-    switch (option) {
-        case 2:
-            showNotes();
-            break;
-        case 0:
-            printf("Goodbye.\n");
-            break;
-        default:
-            printf("Invalid option.\n");
-            break;
-    }
+    createFiles();
+    mainMenu();
 
     return 0;
 }
