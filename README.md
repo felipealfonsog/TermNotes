@@ -4,6 +4,20 @@
 "TermNotes" is a command-line note management utility designed to help you organize your ideas and reminders efficiently. It allows you to create, display, update, and delete notes directly from the terminal, providing you with a fast and straightforward workflow. With "TermNotes," you can keep track of your thoughts and important tasks, all within your favorite command-line environment. Simplify your life and enhance your productivity with this minimalist yet powerful tool.
 
 ## Installation
+### Via AUR using YAY
+
+Term Notes is available on AUR (Arch User Repository), and it can be installed using the `yay` package manager. Follow the steps below to install Term Notes:
+
+1. Make sure you have `yay` installed. If not, you can install it with the following command:
+
+   sudo pacman -S yay
+
+   Once yay is installed, you can install Term Notes by running the following command:
+   yay -S term-notes
+
+This command will automatically fetch the package from AUR and handle the installation process for you.
+
+2. After the installation is complete, you can run Term Notes by typing term_notes in your terminal.
 
 ### Prerequisites
 
