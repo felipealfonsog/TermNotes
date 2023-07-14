@@ -41,8 +41,6 @@ After installing Term Notes, you can launch it from the command line by running:
 term-notes or just term_notes
 
 
-2. After the installation is complete, you can run Term Notes by typing term_notes in your terminal.
-
 ### Prerequisites
 
 - GCC (GNU Compiler Collection)
