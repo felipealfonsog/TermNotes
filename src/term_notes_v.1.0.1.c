@@ -1,8 +1,49 @@
+/*************************************
+ Terminal Notes Utility written in C
+ *************************************
+ *  Simple: Create and manage notes from the terminal
+ *************************************
+ * Developed and engineered by 
+ * Felipe Alfonso Gonzalez <f.alfonso@res-ear.ch>
+ * Computer Science Engineer
+ * Chile
+ *************************************
+ * To create the term_notes binary:
+ *
+ * 1. Extract the source code if needed:
+ *    tar -xf term_notes.tar.gz
+ *
+ * 2. Compile the source code:
+ *    gcc -o term_notes term_notes.c
+ *
+ * 3. Elevate to superuser (if necessary):
+ *    sudo su
+ *
+ * 4. Move the binary to the system bin directory:
+ *    mv term_notes /usr/local/bin/
+ *
+ * 5. Exit superuser mode:
+ *    exit
+ *
+ * 6. You can now run term_notes from the terminal:
+ *    term_notes
+ *
+ *************************************
+ * Please note that term_notes requires the following dependencies:
+ * - Nano: A text editor (sudo apt-get install nano)
+ * - Vim: A text editor (sudo apt-get install vim)
+ *
+ * If any of these dependencies are not installed, please install them
+ * using the provided commands.
+ *
+ * For more information, please refer to the documentation.
+ *************************************
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <ctype.h>
 
 #define MAX_NOTES 100
 
@@ -35,11 +76,7 @@ void addNote() {
 
     printf("Choose the editor (1. Nano, 2. Vim): ");
     int editorChoice;
-    while (scanf("%d", &editorChoice) != 1) {
-        while (getchar() != '\n');
-        printf("Invalid editor choice. Please enter a number.\n");
-        printf("Choose the editor (1. Nano, 2. Vim): ");
-    }
+    scanf("%d", &editorChoice);
 
     char tempFileName[20];
     sprintf(tempFileName, "temp_note_%d.txt", getpid());
@@ -115,11 +152,7 @@ void editNote() {
 
         int choice;
         printf("Enter the note number to edit: ");
-        while (scanf("%d", &choice) != 1) {
-            while (getchar() != '\n');
-            printf("Invalid note number. Please enter a number.\n");
-            printf("Enter the note number to edit: ");
-        }
+        scanf("%d", &choice);
 
         if (choice < 1 || choice > count) {
             printf("Invalid note number.\n");
@@ -153,11 +186,7 @@ void editNote() {
 
                     printf("Choose the editor (1. Nano, 2. Vim): ");
                     int editorChoice;
-                    while (scanf("%d", &editorChoice) != 1) {
-                        while (getchar() != '\n');
-                        printf("Invalid editor choice. Please enter a number.\n");
-                        printf("Choose the editor (1. Nano, 2. Vim): ");
-                    }
+                    scanf("%d", &editorChoice);
 
                     char tempFileName[20];
                     sprintf(tempFileName, "temp_note_%d.txt", getpid());
@@ -224,11 +253,7 @@ void deleteNote() {
 
     int id;
     printf("Enter the note ID to delete: ");
-    while (scanf("%d", &id) != 1) {
-        while (getchar() != '\n');
-        printf("Invalid note ID. Please enter a number.\n");
-        printf("Enter the note ID to delete: ");
-    }
+    scanf("%d", &id);
 
     FILE *file = fopen("notes.txt", "r");
     if (file != NULL) {
@@ -266,13 +291,9 @@ void deleteAllNotes() {
 
     printf("Are you sure you want to delete all notes? (Y/N): ");
     char confirm;
-    while (scanf(" %c", &confirm) != 1 || (tolower(confirm) != 'y' && tolower(confirm) != 'n')) {
-        while (getchar() != '\n');
-        printf("Invalid choice. Please enter 'Y' or 'N'.\n");
-        printf("Are you sure you want to delete all notes? (Y/N): ");
-    }
+    scanf(" %c", &confirm);
 
-    if (tolower(confirm) == 'y') {
+    if (confirm == 'Y' || confirm == 'y') {
         FILE *file = fopen("notes.txt", "w");
         if (file != NULL) {
             fclose(file);
@@ -303,11 +324,7 @@ void showNote() {
 
     int id;
     printf("Enter the note ID to show: ");
-    while (scanf("%d", &id) != 1) {
-        while (getchar() != '\n');
-        printf("Invalid note ID. Please enter a number.\n");
-        printf("Enter the note ID to show: ");
-    }
+    scanf("%d", &id);
 
     FILE *file = fopen("notes.txt", "r");
     if (file != NULL) {
@@ -346,11 +363,7 @@ void notesMenu() {
     do {
         showNotesMenu();
         printf("Enter an option: ");
-        while (scanf("%d", &option) != 1) {
-            while (getchar() != '\n');
-            printf("Invalid option. Please enter a number.\n");
-            printf("Enter an option: ");
-        }
+        scanf("%d", &option);
 
         switch (option) {
             case 1:
@@ -389,11 +402,7 @@ void mainMenu() {
         printf("0. Exit\n");
         printf("******************\n");
         printf("Enter an option: ");
-        while (scanf("%d", &option) != 1) {
-            while (getchar() != '\n');
-            printf("Invalid option. Please enter a number.\n");
-            printf("Enter an option: ");
-        }
+        scanf("%d", &option);
 
         switch (option) {
             case 1:
