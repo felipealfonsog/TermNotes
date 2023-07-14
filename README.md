@@ -8,6 +8,8 @@
 ## Installation
 ### Via AUR using YAY
 
+[![AUR](https://img.shields.io/aur/version/term-notes.svg)](https://aur.archlinux.org/packages/term-notes)
+
 https://aur.archlinux.org/packages/term-notes
 
 Term Notes is available on AUR (Arch User Repository), and it can be installed using the `yay` package manager. Follow the steps below to install Term Notes:
@@ -20,6 +22,24 @@ Term Notes is available on AUR (Arch User Repository), and it can be installed u
    yay -S term-notes
 
 This command will automatically fetch the package from AUR and handle the installation process for you.
+
+### Via Brew
+
+[![Homebrew](https://img.shields.io/badge/Install%20with-Homebrew-orange.svg)](https://brew.sh)
+
+## Installation
+
+You can easily install Term Notes using Homebrew. If you don't have Homebrew installed, you can get it from [brew.sh](https://brew.sh).
+
+To install Term Notes, run the following command:
+
+brew install term-notes
+
+### Usage after installing with Brew
+
+After installing Term Notes, you can launch it from the command line by running:
+term-notes or just term_notes
+
 
 2. After the installation is complete, you can run Term Notes by typing term_notes in your terminal.
 
