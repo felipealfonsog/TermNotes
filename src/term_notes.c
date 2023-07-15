@@ -1,3 +1,45 @@
+/*************************************
+ Terminal Notes Utility written in C
+ *************************************
+ *  Simple: Create and manage notes from the terminal
+ *************************************
+ * Developed and engineered by 
+ * Felipe Alfonso Gonzalez <f.alfonso@res-ear.ch>
+ * Computer Science Engineer
+ * Chile
+ *************************************
+ * To create the term_notes binary:
+ *
+ * 1. Extract the source code if needed:
+ *    tar -xf term_notes.tar.gz
+ *
+ * 2. Compile the source code:
+ *    gcc -o term_notes term_notes.c
+ *
+ * 3. Elevate to superuser (if necessary):
+ *    sudo su
+ *
+ * 4. Move the binary to the system bin directory:
+ *    mv term_notes /usr/local/bin/
+ *
+ * 5. Exit superuser mode:
+ *    exit
+ *
+ * 6. You can now run term_notes from the terminal:
+ *    term_notes
+ *
+ *************************************
+ * Please note that term_notes requires the following dependencies:
+ * - Nano: A text editor (sudo apt-get install nano)
+ * - Vim: A text editor (sudo apt-get install vim)
+ *
+ * If any of these dependencies are not installed, please install them
+ * using the provided commands.
+ *
+ * For more information, please refer to the documentation.
+ *************************************
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
