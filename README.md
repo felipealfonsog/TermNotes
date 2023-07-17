@@ -100,13 +100,13 @@ Term Notes is licensed under the MIT License. See [LICENSE](LICENSE) for more in
 
 ## Contact
 
-If you have any questions or suggestions, feel free to reach out to me:
+My name is Felipe, Computer Science Enginer, I'm the creator of the project; if you have any questions or suggestions, feel free to reach out to me:
 
 - Email: f.alfonso@res-ear.ch
 - LinkedIn: [felipealfonsog](https://www.linkedin.com/in/felipealfonsog/)
 - GitHub: [felipealfonsog](https://github.com/felipealfonsog)
 
-If you find this project helpful and would like to support its development, you can contribute through various means:
+If you find this project helpful and would like to support its development, you can contribute through different ways:
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-%E2%98%95-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/felipealfonsog)
 [![Support me on PayPal](https://img.shields.io/badge/Support%20me%20on-PayPal-00457C?style=flat-square&logo=paypal&logoColor=white)](https://www.paypal.me/felipealfonsog)
