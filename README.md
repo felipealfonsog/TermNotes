@@ -100,16 +100,23 @@ Term Notes is licensed under the MIT License. See [LICENSE](LICENSE) for more in
 
 ## Contact
 
-My name is Felipe, Computer Science Enginer, I'm the creator of the project; if you have any questions or suggestions, feel free to reach out to me:
+Hello! My name is Felipe, and I'm a passionate Computer Science Engineer. I'm also the creator of this project. If you have any questions, suggestions, or just want to chat, feel free to reach out to me. I'd be more than happy to help!
 
 - Email: f.alfonso@res-ear.ch
 - LinkedIn: [felipealfonsog](https://www.linkedin.com/in/felipealfonsog/)
 - GitHub: [felipealfonsog](https://github.com/felipealfonsog)
 
-If you find this project helpful and would like to support its development, you can contribute through different ways:
+## Support and Contributions
 
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-%E2%98%95-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/felipealfonsog)
-[![Support me on PayPal](https://img.shields.io/badge/Support%20me%20on-PayPal-00457C?style=flat-square&logo=paypal&logoColor=white)](https://www.paypal.me/felipealfonsog)
-[![Sponsor me on GitHub](https://img.shields.io/badge/Sponsor%20me%20on-GitHub-%23EA4AAA?style=flat-square&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/felipealfonsog)
+If you find this project helpful and would like to support its development, there are several ways you can contribute:
 
+- **Code Contributions**: If you're a developer, you can contribute by submitting pull requests with bug fixes, new features, or improvements. Feel free to fork the project and create your own branch to work on.
+- **Bug Reports and Feedback**: If you encounter any issues or have suggestions for improvement, please open an issue on the project's GitHub repository. Your feedback is valuable in making the project better.
+- **Documentation**: Improving the documentation is always appreciated. If you find any gaps or have suggestions to enhance the project's documentation, please let me know.
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-%E2%98%95-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/felipealfonsog)
+[![PayPal](https://img.shields.io/badge/Donate%20with-PayPal-00457C?style=flat-square&logo=paypal&logoColor=white)](https://www.paypal.com/felipealfonsog)
+[![GitHub Sponsors](https://img.shields.io/badge/Sponsor%20me%20on-GitHub-%23EA4AAA?style=flat-square&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/felipealfonsog)
+
+Your support and contributions are greatly appreciated! Thank you for your help in making this project better.
 
