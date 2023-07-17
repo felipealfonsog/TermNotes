@@ -106,6 +106,10 @@ If you have any questions or suggestions, feel free to reach out to me:
 - LinkedIn: [felipealfonsog](https://www.linkedin.com/in/felipealfonsog/)
 - GitHub: [felipealfonsog](https://github.com/felipealfonsog)
 
-If you find this project helpful and would like to support its development, you can contribute via PayPal:
+If you find this project helpful and would like to support its development, you can contribute through various means:
 
-[Support via PayPal](https://www.paypal.me/felipealfonsog)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-%E2%98%95-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/felipealfonsog)
+[![Support me on PayPal](https://img.shields.io/badge/Support%20me%20on-PayPal-00457C?style=flat-square&logo=paypal&logoColor=white)](https://www.paypal.me/felipealfonsog)
+[![Sponsor me on GitHub](https://img.shields.io/badge/Sponsor%20me%20on-GitHub-%23EA4AAA?style=flat-square&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/felipealfonsog)
+
+
