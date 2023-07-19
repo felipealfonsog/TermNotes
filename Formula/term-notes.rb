@@ -5,9 +5,8 @@ class TermNotes < Formula
   sha256 "e1ae65286b64c3466d5749524c79df1063ec9db35b265f0359d24cc76397d88c"
   license "MIT"
 
-  depends_on "gcc"
-  depends_on "vim"
   depends_on "nano"
+  depends_on "vim"
 
   def install
     if OS.mac?
@@ -30,9 +29,5 @@ class TermNotes < Formula
 
       Enjoy taking notes with 'Term Notes'!
     EOS
-  end
-
-  test do
-    # Add your test logic here
   end
 end
