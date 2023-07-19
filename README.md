@@ -30,6 +30,7 @@ Term Notes is available on AUR (Arch User Repository), and it can be installed u
    sudo pacman -S yay
 
    Once yay is installed, you can install Term Notes by running the following command:
+
    yay -S term-notes
 
 This command will automatically fetch the package from AUR and handle the installation process for you.
@@ -38,11 +39,11 @@ This command will automatically fetch the package from AUR and handle the instal
 
 [![Homebrew Rejected](https://img.shields.io/badge/Homebrew-Not%20Accepted-yellow)](https://github.com/TermNotes)
 
-We regret to inform you that our project, Term Notes, has been rejected by Homebrew for publication in their package repository. This means that Arch Linux users, unfortunately, won't be able to install Term Notes directly through Homebrew. However, we have an alternative solution for Arch Linux users!
+We regret to inform you that the project, Term Notes, has been rejected by Homebrew for publication in their package repository. This means that Linux users from different distros, unfortunately, won't be able to install Term Notes directly through Homebrew. However, we have an alternative solution for Arch Linux users!
 
-Term Notes can still be installed through the YAY package manager, ensuring Arch Linux users can enjoy the benefits of our note-taking application. Simply follow the instructions provided in the project's documentation to install Term Notes using YAY.
+Term Notes can still be installed through the YAY package manager, ensuring Arch Linux users can enjoy the benefits of the note-taking application. Simply follow the instructions provided in the project's documentation to install Term Notes using YAY.
 
-For users on other Linux distributions and macOS, don't worry! You can still compile and use the binary file from the cloned GitHub project repository. Although it won't be installed system-wide, you can run the application directly from the project folder. We apologize for any inconvenience this may cause.
+For users on other Linux distributions and macOS, don't worry! You can still compile and use the binary file from the cloned GitHub project repository. Although it won't be installed system-wide, you can run the application directly from the project folder. I apologize for any inconvenience this may cause.
 
 #### Prerequisites
 
