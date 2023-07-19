@@ -44,12 +44,12 @@ Term Notes can still be installed through the YAY package manager, ensuring Arch
 
 For users on other Linux distributions and macOS, don't worry! You can still compile and use the binary file from the cloned GitHub project repository. Although it won't be installed system-wide, you can run the application directly from the project folder. We apologize for any inconvenience this may cause.
 
-### Prerequisites
+#### Prerequisites
 
 - GCC (GNU Compiler Collection)
 - Nano or Vim text editor
 
-### Compiling the Source Code
+#### Compiling the Source Code
 
 1. Clone the repository:
 git clone https://github.com/felipealfonsog/term-notes.git
@@ -61,7 +61,7 @@ cd term-notes
 gcc -o term_notes term_notes.c
 
 
-## Usage
+#### Usage
 
 - To create a new note:
 term_notes create
@@ -76,7 +76,7 @@ term_notes list
 term_notes delete [note_id]
 
 
-## Contributing
+#### Contributing
 
 Contributions are welcome! Here's how you can contribute to Term Notes:
 
@@ -86,11 +86,11 @@ Contributions are welcome! Here's how you can contribute to Term Notes:
 4. Push the changes to your branch: `git push origin feature/your-feature-name`.
 5. Create a new pull request.
 
-## License
+#### License
 
 Term Notes is licensed under the MIT License. See [LICENSE](LICENSE) for more information.
 
-## Contact
+#### Contact
 
 Hello! My name is Felipe, and I'm a passionate Computer Science Engineer. I'm also the creator of this project. If you have any questions, suggestions, or just want to chat, feel free to reach out to me. I'd be more than happy to help!
 
@@ -98,7 +98,7 @@ Hello! My name is Felipe, and I'm a passionate Computer Science Engineer. I'm al
 - LinkedIn: [felipealfonsog](https://www.linkedin.com/in/felipealfonsog/)
 - GitHub: [felipealfonsog](https://github.com/felipealfonsog)
 
-## Support and Contributions
+#### Support and Contributions
 
 If you find this project helpful and would like to support its development, there are several ways you can contribute:
 
