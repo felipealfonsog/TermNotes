@@ -34,23 +34,15 @@ Term Notes is available on AUR (Arch User Repository), and it can be installed u
 
 This command will automatically fetch the package from AUR and handle the installation process for you.
 
-### Via Brew
+#### Project Availability Update: Homebrew Rejection
 
-[![Homebrew](https://img.shields.io/badge/Install%20with-Homebrew-orange.svg)](https://brew.sh)
+[![Homebrew Rejected](https://img.shields.io/badge/Homebrew-Not%20Accepted-yellow)](https://github.com/TermNotes)
 
-## Installation
+We regret to inform you that our project, Term Notes, has been rejected by Homebrew for publication in their package repository. This means that Arch Linux users, unfortunately, won't be able to install Term Notes directly through Homebrew. However, we have an alternative solution for Arch Linux users!
 
-You can easily install Term Notes using Homebrew. If you don't have Homebrew installed, you can get it from [brew.sh](https://brew.sh).
+Term Notes can still be installed through the YAY package manager, ensuring Arch Linux users can enjoy the benefits of our note-taking application. Simply follow the instructions provided in the project's documentation to install Term Notes using YAY.
 
-To install Term Notes, run the following command:
-
-brew install term-notes
-
-### Usage after installing with Brew
-
-After installing Term Notes, you can launch it from the command line by running:
-term-notes or just term_notes
-
+For users on other Linux distributions and macOS, don't worry! You can still compile and use the binary file from the cloned GitHub project repository. Although it won't be installed system-wide, you can run the application directly from the project folder. We apologize for any inconvenience this may cause.
 
 ### Prerequisites
 
