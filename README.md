@@ -30,34 +30,27 @@ Term Notes is available on AUR (Arch User Repository), and it can be installed u
    sudo pacman -S yay
 
    Once yay is installed, you can install Term Notes by running the following command:
+
    yay -S term-notes
 
 This command will automatically fetch the package from AUR and handle the installation process for you.
 
-### Via Brew
+#### Project Availability Update: Homebrew Rejection
 
-[![Homebrew](https://img.shields.io/badge/Install%20with-Homebrew-orange.svg)](https://brew.sh)
+[![Homebrew Rejected](https://img.shields.io/badge/Homebrew-Not%20Accepted-yellow)](https://github.com/TermNotes)
 
-## Installation
+We regret to inform you that the project, Term Notes, has been rejected by Homebrew for publication in their package repository. This means that Linux users from different distros, unfortunately, won't be able to install Term Notes directly through Homebrew. However, we have an alternative solution for Arch Linux users!
 
-You can easily install Term Notes using Homebrew. If you don't have Homebrew installed, you can get it from [brew.sh](https://brew.sh).
+Term Notes can still be installed through the YAY package manager, ensuring Arch Linux users can enjoy the benefits of the note-taking application. Simply follow the instructions provided in the project's documentation to install Term Notes using YAY.
 
-To install Term Notes, run the following command:
+For users on other Linux distributions and macOS, don't worry! You can still compile and use the binary file from the cloned GitHub project repository. Although it won't be installed system-wide, you can run the application directly from the project folder. I apologize for any inconvenience this may cause.
 
-brew install term-notes
-
-### Usage after installing with Brew
-
-After installing Term Notes, you can launch it from the command line by running:
-term-notes or just term_notes
-
-
-### Prerequisites
+#### Prerequisites
 
 - GCC (GNU Compiler Collection)
 - Nano or Vim text editor
 
-### Compiling the Source Code
+#### Compiling the Source Code
 
 1. Clone the repository:
 git clone https://github.com/felipealfonsog/term-notes.git
@@ -69,7 +62,7 @@ cd term-notes
 gcc -o term_notes term_notes.c
 
 
-## Usage
+#### Usage
 
 - To create a new note:
 term_notes create
@@ -84,7 +77,7 @@ term_notes list
 term_notes delete [note_id]
 
 
-## Contributing
+#### Contributing
 
 Contributions are welcome! Here's how you can contribute to Term Notes:
 
@@ -94,11 +87,11 @@ Contributions are welcome! Here's how you can contribute to Term Notes:
 4. Push the changes to your branch: `git push origin feature/your-feature-name`.
 5. Create a new pull request.
 
-## License
+#### License
 
 Term Notes is licensed under the MIT License. See [LICENSE](LICENSE) for more information.
 
-## Contact
+#### Contact
 
 Hello! My name is Felipe, and I'm a passionate Computer Science Engineer. I'm also the creator of this project. If you have any questions, suggestions, or just want to chat, feel free to reach out to me. I'd be more than happy to help!
 
@@ -106,7 +99,7 @@ Hello! My name is Felipe, and I'm a passionate Computer Science Engineer. I'm al
 - LinkedIn: [felipealfonsog](https://www.linkedin.com/in/felipealfonsog/)
 - GitHub: [felipealfonsog](https://github.com/felipealfonsog)
 
-## Support and Contributions
+#### Support and Contributions
 
 If you find this project helpful and would like to support its development, there are several ways you can contribute:
 
