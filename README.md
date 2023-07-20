@@ -55,7 +55,7 @@ For users on other Linux distributions and macOS, don't worry! You can still com
 #### Compiling the Source Code
 
 1. Clone the repository:
-git clone https://github.com/felipealfonsog/TermNtes.git
+git clone https://github.com/felipealfonsog/TermNotes.git
 
 2. Navigate to the project directory:
 cd TermNotes/src
