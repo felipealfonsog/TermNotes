@@ -26,7 +26,7 @@ https://aur.archlinux.org/packages/term-notes
 Term Notes is available on AUR (Arch User Repository), and it can be installed using the `yay` package manager. Follow the steps below to install Term Notes:
 
 1. Make sure you have `yay` installed. If not, you can install it with the following command:
-2. 
+   
    ```
    sudo pacman -S yay
    ```
