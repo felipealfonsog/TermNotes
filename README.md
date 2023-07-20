@@ -55,14 +55,20 @@ For users on other Linux distributions and macOS, don't worry! You can still com
 #### Compiling the Source Code
 
 1. Clone the repository:
-git clone https://github.com/felipealfonsog/term-notes.git
 
-2. Navigate to the project directory:
-cd term-notes/src
+```
+git clone https://github.com/felipealfonsog/TermNotes.git
+```
+3. Navigate to the project directory:
 
-3. Compile the source code:
+```
+cd TermNotes/src
+```
+4. Compile the source code:
+
+```
 gcc -o term-notes term_notes.c
-
+```
 
 #### Usage
 
