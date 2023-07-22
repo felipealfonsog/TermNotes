@@ -16,6 +16,26 @@
 
 ![Screenshot of the Term Notes application interface](imgs/sshot_termnotes.jpg)
 
+## Term-Notes Installer 🚀
+
+[![Installer Success](https://img.shields.io/badge/Installer-Success-orange)](https://github.com/felipealfonsog/TermNotes)
+
+Hey there! 👋 I'm excited to share that I successfully created a convenient Bash installer for Term-Notes, a terminal-based note-taking application.
+
+📝 With this installer, Mac OS users can effortlessly install the program by executing a simple script. No more hassles with manual compilation or dependencies!
+
+🚀 The installer takes care of everything: downloading the source code, compiling the program, and even checking for Homebrew or Linux package managers to ensure smooth installation.
+
+💻 Whether you're on Mac OS or Linux, the installer streamlines the process, so you can focus on taking notes without any hassle.
+
+By the way, we had some hurdles along the way. Homebrew didn't accept our project, but screw it! 😄 We persevered and made it happen, developing an easy-to-use installer with some cool ASCII ART!
+
+To install Term-Notes, simply run the installer script available [here](https://github.com/felipealfonsog/TermNotes/blob/main/installer.sh).
+
+Please note that if you encounter any issues or have suggestions, feel free to raise an issue on the [TermNotes repository](https://github.com/felipealfonsog/TermNotes). Your feedback is invaluable!
+
+🌈 Thank you for joining me on this journey, and I hope Term-Notes brings value to your workflow. Let's continue making technology accessible and enjoyable for everyone! 🤖💙
+
 ## Installation
 ### Via AUR using YAY
 
