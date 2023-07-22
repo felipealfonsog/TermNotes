@@ -33,6 +33,24 @@ By the way, we had some hurdles along the way. Homebrew didn't accept our projec
 #### To Install it: 
 To install Term-Notes, simply run the installer script available [here](https://github.com/felipealfonsog/TermNotes/blob/main/installer.sh).
 
+#### Important note when installing:
+
+If you encounter issues executing the file in the terminal, follow these simple steps to fix it:
+
+1. Open your terminal.
+2. Navigate to the directory where the installer script is located using the `cd` command.
+3. Run the following command to grant execute permission to the installer script:
+
+   ```
+   chmod +x installer.sh
+   
+   ```
+   
+4. Now you can run the installer without any problems. Enjoy using Term-Notes! 😊🚀
+
+Feel free to reach out if you need any further assistance!
+
+
 Please note that if you encounter any issues or have suggestions, feel free to raise an issue on the [TermNotes repository](https://github.com/felipealfonsog/TermNotes/issues). Your feedback is invaluable!
 
 🌈 Thank you for joining me on this journey, and I hope Term-Notes brings value to your workflow. Let's continue making technology accessible and enjoyable for everyone! 🤖💙
