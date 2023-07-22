@@ -39,8 +39,8 @@ echo "
 "
 
 
-echo "Welcome to the Term-Notes installer!"
-echo "*******************************************
+echo "Welcome to the Term-Notes installer! v.1.0.1"
+echo "*************************************************
 
 "
 
