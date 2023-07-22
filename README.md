@@ -35,9 +35,9 @@ To install Term-Notes, simply run the installer script available [here](https://
 
 Or just Copy - Paste in your terminal and use wget to start downloading the installer:
 
-  ```
-  wget https://github.com/felipealfonsog/TermNotes/blob/main/installer.sh
-  ```
+   ```
+   wget https://github.com/felipealfonsog/TermNotes/blob/main/installer.sh
+   ```
 
 #### Important note when installing:
 
