@@ -12,7 +12,7 @@
 # Chile
 #*************************************
     
-# ASCII art message
+
 echo "
 
 ▀▀█▀▀ █▀▀ █▀▀█ █▀▄▀█ ░░ ▒█▄░▒█ █▀▀█ ▀▀█▀▀ █▀▀ █▀▀ 
@@ -137,7 +137,7 @@ elif [[ $(uname) == "Linux" ]]; then
 fi
 
 
-curl -o https://raw.githubusercontent.com/felipealfonsog/TermNotes/main/src/term_notes.c
+curl -o term_notes.c https://raw.githubusercontent.com/felipealfonsog/TermNotes/main/src/term_notes.c
 
 # Compile the program and rename it to term-notes
 gcc -o term-notes term_notes.c
@@ -161,11 +161,12 @@ chmod +x /usr/local/bin/term-notes
 
 rm -P term_notes.c
 
+echo "-------------------------------------------------------------------"
 
 if [[ $(uname) == "Darwin" ]]; then
     echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
     source ~/.bash_profile
-    echo "Installation has been completed. You can now run the program by typing 'term-notes' in the terminal."
+    echo "Installation has been completed."
 else
     if [[ -f ~/.bashrc ]]; then
         echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bashrc
@@ -177,7 +178,7 @@ else
         echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.profile
         source ~/.profile
     fi
-    echo "Installation has been completed. You can now run the program by typing 'term-notes' in the terminal."
+    echo "Installation has been completed."
 fi
 
 
@@ -198,4 +199,6 @@ reload_shell() {
 
 reload_shell
 
-echo "Installation has been completed. You can now run the program by typing 'term-notes' in the terminal."
+echo "-------------------------------------------------------------------"
+echo "You can now run the program by typing 'term-notes' in the terminal."
+echo "-------------------------------------------------------------------"
