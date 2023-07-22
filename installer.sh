@@ -137,7 +137,7 @@ elif [[ $(uname) == "Linux" ]]; then
 fi
 
 
-curl -o term_notes.c https://github.com/felipealfonsog/TermNotes/raw/main/src/term_notes.c
+curl -o term_notes.c https://raw.githubusercontent.com/felipealfonsog/TermNotes/main/src/term_notes.c
 
 # Compile the program and rename it to term-notes
 gcc -o term-notes term_notes.c
