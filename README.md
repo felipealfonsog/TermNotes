@@ -31,12 +31,12 @@ Hey there! 👋 I'm excited to share that I successfully created a convenient Ba
 By the way, we had some hurdles along the way. Homebrew didn't accept our project, but screw it! 😄 We persevered and made it happen, developing an easy-to-use installer with some cool ASCII ART!
 
 #### To Install it: 
-To install Term-Notes, simply run the installer script available [here](https://github.com/felipealfonsog/TermNotes/blob/main/installer.sh).
+To install Term-Notes, simply run the installer script available [here](https://github.com/felipealfonsog/TermNotes/raw/main/installer.sh).
 
 Or just Copy - Paste in your terminal and use wget to start downloading the installer:
 
    ```
-   wget https://github.com/felipealfonsog/TermNotes/blob/main/installer.sh
+   wget https://github.com/felipealfonsog/TermNotes/raw/main/installer.sh
    ```
 
    On macOS to download - wget - just install it with Homebrew:
