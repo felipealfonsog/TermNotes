@@ -36,7 +36,6 @@ To install Term-Notes, simply run the installer script available [here](https://
 Or just Copy - Paste in your terminal and use -curl- to start downloading the installer:
 
    ```
-   <!-- curl -o installer.sh https://raw.githubusercontent.com/felipealfonsog/TermNotes/raw/main/installer.sh -->
    curl -O https://raw.githubusercontent.com/felipealfonsog/TermNotes/raw/main/installer.sh
    ```
 
