@@ -39,6 +39,12 @@ Or just Copy - Paste in your terminal and use wget to start downloading the inst
    wget https://github.com/felipealfonsog/TermNotes/blob/main/installer.sh
    ```
 
+   On mac to download - wget - just install it with Homebrew:
+
+   ```
+   brew install wget
+   ```
+
 #### Important note when installing:
 
 If you encounter issues executing the file in the terminal, follow these simple steps to fix it:
