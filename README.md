@@ -33,7 +33,13 @@ By the way, we had some hurdles along the way. Homebrew didn't accept our projec
 #### To Install it: 
 To install Term-Notes, simply run the installer script available [here](https://github.com/felipealfonsog/TermNotes/raw/main/installer.sh).
 
-Or just Copy - Paste in your terminal and use wget to start downloading the installer:
+Or just Copy - Paste in your terminal and use -curl- to start downloading the installer:
+
+   ```
+   curl -O https://github.com/felipealfonsog/TermNotes/raw/main/installer.sh
+   ```
+
+If you want to use -wget- just copy/paste this line:
 
    ```
    wget https://github.com/felipealfonsog/TermNotes/raw/main/installer.sh
