@@ -1,5 +1,16 @@
 #!/bin/bash
 
+#*************************************
+# Terminal Notes Utility written in C
+#*************************************
+# Simple: Create and manage notes from the terminal
+#*************************************
+# Developed and engineered by 
+# Felipe Alfonso Gonzalez <f.alfonso@res-ear.ch>
+# Computer Science Engineer
+# Chile
+#*************************************
+    
 # ASCII art message
 echo "
 
@@ -7,22 +18,32 @@ echo "
 ░▒█░░ █▀▀ █▄▄▀ █░▀░█ ▀▀ ▒█▒█▒█ █░░█ ░░█░░ █▀▀ ▀▀█ 
 ░▒█░░ ▀▀▀ ▀░▀▀ ▀░░░▀ ░░ ▒█░░▀█ ▀▀▀▀ ░░▀░░ ▀▀▀ ▀▀▀
 
-# *****************************************************************************
-# License: This program is licensed under MIT License and GPL License.
-# Author: Felipe Alfonso Gonzalez / Computer Science Engineer
-# Contact: f.alfonso@res-ear.ch
-# *****************************************************************************
+
+  ╔═══════════════════════════════════════╗
+  ║                                       ║
+  ║   ~ Term Notes ~                      ║
+  ║   Developed with ❤️ by                 ║
+  ║   Felipe Alfonso González L.          ║
+  ║   Computer Science Engineer           ║
+  ║   Chile                               ║
+  ║                                       ║
+  ║   Contact: f.alfonso@res-ear.ch       ║
+  ║   Licensed under GNU/GPL and MIT      ║
+  ║   GitHub: github.com/felipealfonsog   ║
+  ║   LinkedIn:                           ║
+  ║   linkedin.com/in/felipealfonsog      ║
+  ║                                       ║
+  ╚═══════════════════════════════════════╝
+
 
 "
 
 
-# Welcome message
 echo "Welcome to the Term-Notes installer!"
 echo "*******************************************
 
 "
 
-# Check if the installer script has execute permission
 if [[ ! -x "$0" ]]; then
     echo "The installer script does not have execute permission. Do you want to grant it?"
     select yn in "Yes" "No"; do
@@ -42,7 +63,7 @@ if [[ ! -x "$0" ]]; then
     done
 fi
 
-# Check if Homebrew/Linuxbrew is installed on macOS and Linux
+
 if [[ $(uname) == "Darwin" ]]; then
     if ! command -v brew &> /dev/null; then
         echo "Homebrew is not installed on macOS. Do you want to install it?"
@@ -82,7 +103,7 @@ elif [[ $(uname) == "Linux" ]]; then
         done
     fi
 
-    # Check if GCC is installed on Linux
+
     if ! command -v gcc &> /dev/null; then
         echo "GCC is not installed on Linux. Do you want to install it?"
         select yn in "Yes, using Homebrew" "Yes, using package manager" "No"; do
@@ -114,7 +135,7 @@ elif [[ $(uname) == "Linux" ]]; then
     fi
 fi
 
-# Download the .c file from GitHub
+
 curl -O https://raw.githubusercontent.com/felipealfonsog/TermNotes/main/term_notes.c
 
 # Compile the program and rename it to term-notes
@@ -133,13 +154,13 @@ else
     fi
 fi
 
-# Set execution permissions for the term-notes executable
+
 chmod +x /usr/local/bin/term-notes
 
-# Clean up temporary files
+
 rm -P term_notes.c
 
-# Export necessary configuration for macOS and Linux
+
 if [[ $(uname) == "Darwin" ]]; then
     echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
     source ~/.bash_profile
@@ -158,7 +179,7 @@ else
     echo "Installation has been completed. You can now run the program by typing 'term-notes' in the terminal."
 fi
 
-# Function to reload the shell environment
+
 reload_shell() {
     if [[ $(uname) == "Darwin" ]]; then
         source ~/.bash_profile
@@ -173,7 +194,7 @@ reload_shell() {
     fi
 }
 
-# Call the function to reload the shell environment
+
 reload_shell
 
 echo "Installation has been completed. You can now run the program by typing 'term-notes' in the terminal."
