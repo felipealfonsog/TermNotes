@@ -142,9 +142,14 @@ curl -o term_notes.c https://raw.githubusercontent.com/felipealfonsog/TermNotes/
 # Compile the program and rename it to term-notes
 gcc -o term-notes term_notes.c
 
-# Move the executable to the appropriate location
+
 if [[ $(uname) == "Darwin" ]]; then
     sudo mv term-notes /usr/local/bin/
+
+    # Check if executable permissions need to be set on macOS
+    if [[ ! -x /usr/local/bin/term-notes ]]; then
+        sudo chmod +x /usr/local/bin/term-notes
+    fi
 else
     if [[ -f /etc/arch-release ]]; then
         sudo mv term-notes /usr/bin/
@@ -153,10 +158,15 @@ else
     else
         sudo mv term-notes /usr/local/bin/
     fi
+
+ 
+    if [[ -x /usr/bin/term-notes ]]; then
+        sudo chmod +x /usr/bin/term-notes
+    elif [[ -x /usr/local/bin/term-notes ]]; then
+        sudo chmod +x /usr/local/bin/term-notes
+    fi
 fi
 
-
-chmod +x /usr/local/bin/term-notes
 
 
 rm -rf term_notes.c
