@@ -53,7 +53,7 @@ If you want to use -wget- just copy/paste this line:
 
 #### Important note when installing:
 
-If you encounter issues executing the file in the terminal, follow these simple steps to fix it:
+If you encounter issues executing the file in the terminal, like this message "-bash: ./installer.sh: Permission denied", follow these simple steps to fix it:
 
 1. Open your terminal.
 2. Navigate to the directory where the installer script is located using the `cd` command.
