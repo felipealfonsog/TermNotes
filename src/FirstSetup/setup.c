@@ -30,31 +30,28 @@
 #include <sys/types.h>
 
 void printLogo() {
+    
+    printf("▀▀█▀▀ █▀▀ █▀▀█ █▀▄▀█ ░░ ▒█▄░▒█ █▀▀█ ▀▀█▀▀ █▀▀ █▀▀ \n");
+    printf("░▒█░░ █▀▀ █▄▄▀ █░▀░█ ▀▀ ▒█▒█▒█ █░░█ ░░█░░ █▀▀ ▀▀█ \n");
+    printf("░▒█░░ ▀▀▀ ▀░▀▀ ▀░░░▀ ░░ ▒█░░▀█ ▀▀▀▀ ░░▀░░ ▀▀▀ ▀▀▀ \n");
+    printf("\n");
     printf("  ╔═══════════════════════════════════════╗\n");
     printf("  ║                                       ║\n");
-    printf("  ║   ______   __     __  ________        ║\n");
-    printf("  ║  /      \\ /  \\   /  |/        |       ║\n");
-    printf("  ║ |  $$$$$$\\\\$$\\ /  $$|  $$$$$$$       ║\n");
-    printf("  ║ | $$  | $$ \\$$\\  $$ | $$  | $$       ║\n");
-    printf("  ║ | $$  | $$  \\$$\\$$  | $$  | $$       ║\n");
-    printf("  ║ | $$ _| $$   \\$$$  _| $$  | $$       ║\n");
-    printf("  ║ | $$/ \\ $$    \\$  /  | $$  | $$       ║\n");
-    printf("  ║  \\$$ $$\\$$     \\_/   \\$$   \\$$       ║\n");
-    printf("  ║    \\$$$  \\                          ║\n");
-    printf("  ║                                       ║\n");
     printf("  ║   ~ Term Notes ~                      ║\n");
-    printf("  ║   Developed with ❤️ by               ║\n");
-    printf("  ║   Felipe Alfonso González L.         ║\n");
-    printf("  ║   Computer Science Engineer          ║\n");
-    printf("  ║   Chile                              ║\n");
+    printf("  ║   Developed with ❤️ by                 ║\n");
+    printf("  ║   Felipe Alfonso González L.          ║\n");
+    printf("  ║   Computer Science Engineer           ║\n");
+    printf("  ║   Chile                               ║\n");
     printf("  ║                                       ║\n");
     printf("  ║   Contact: f.alfonso@res-ear.ch       ║\n");
     printf("  ║   Licensed under GNU/GPL and MIT      ║\n");
     printf("  ║   GitHub: github.com/felipealfonsog   ║\n");
-    printf("  ║   LinkedIn: linkedin.com/in/felipealfonsog  ║\n");
+    printf("  ║   LinkedIn:                           ║\n");
+    printf("  ║   linkedin.com/in/felipealfonsog      ║\n");
     printf("  ║                                       ║\n");
     printf("  ╚═══════════════════════════════════════╝\n");
-    printf("\n");
+
+
 }
 
 void printBoxedText(const char* text) {
