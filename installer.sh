@@ -12,6 +12,7 @@
 # Chile
 #*************************************
     
+# Installer  v.1.0.2
 
 echo "
 
@@ -40,7 +41,7 @@ echo "
 "
 
 
-echo "Welcome to the Term-Notes installer! v.1.0.1"
+echo "Welcome to the Term-Notes installer!"
 echo "*************************************************
 
 "
