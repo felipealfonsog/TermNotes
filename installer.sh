@@ -159,7 +159,7 @@ fi
 chmod +x /usr/local/bin/term-notes
 
 
-rm -P term_notes.c
+rm -rf term_notes.c
 
 echo "-------------------------------------------------------------------"
 
