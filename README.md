@@ -57,7 +57,13 @@ If you encounter issues executing the file in the terminal, follow these simple 
    chmod +x installer.sh
    ```
    
-4. Now you can run the installer without any problems. Enjoy using Term-Notes! 😊🚀
+4. Now you can run the installer without any problems.
+
+   ```
+   ./installer.sh
+   ```
+
+Now type 'term-notes' in the terminal and enjoy using Term-Notes! 😊🚀
 
 Feel free to reach out if you need any further assistance!
 
