@@ -68,6 +68,7 @@ If you encounter issues executing the file in the terminal, like this message "-
    ```
    ./installer.sh
    ```
+   NOTE: The script will ask for -sudo permissions-. Just simply type in macOS your macOS user password, and in Linux your -sudo- password.
 
 Now type 'term-notes' in the terminal and enjoy using Term-Notes! 😊🚀
 
