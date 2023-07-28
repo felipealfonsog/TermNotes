@@ -15,6 +15,41 @@
 [![Vim](https://img.shields.io/badge/--019733?logo=vim)](https://www.vim.org/)
 [![Visual Studio Code](https://img.shields.io/badge/--007ACC?logo=visual%20studio%20code&logoColor=ffffff)](https://code.visualstudio.com/)
 
+🚀 **Excited to Present Version 1.0.4** 🚀
+
+I am thrilled to announce that soon I'll be presenting version 1.0.4 of the Terminal Notes Utility! Currently, we are at v.1.0.3.8, and I'm going even further with exciting new features and improvements! 🎉
+
+**Implemented Changes and Features:**
+
+1. **Create Files**: Added `createFiles()` function to create the `term_notes` file in `~/.config` if it doesn't exist.
+
+2. **Move Binary**: Implemented `moveBinaryToDestination()` to move the `term-notes` binary to `/usr/local/bin/` on Linux or `/usr/local/bin/` on macOS.
+
+3. **Add Note**: Implemented `addNote()` function for adding a new note, storing its content in `notes.txt`, and providing options to edit it using `nano`, `vim`, or `neovim`.
+
+4. **Edit Note**: Added `editNote()` function for editing an existing note, displaying a list of available notes, and choosing an editor (`nano`, `vim`, or `neovim`) to edit the selected note's content.
+
+5. **Delete Note**: Implemented `deleteNote()` function to delete an existing note, showing a list of notes, and selecting one to delete.
+
+6. **Delete All Notes**: Added `deleteAllNotes()` function to delete all existing notes from `notes.txt`.
+
+7. **Show Note**: Implemented `showNote()` function for displaying the content of a specific note, requesting the note's ID, and showing its content if found.
+
+8. **Show All Notes**: Added `showAllNotes()` function to display the content of all existing notes in `notes.txt`.
+
+9. **Menus**: Created `showNotesMenu()` and `mainMenu()` functions to display the available options for managing notes and the main menu, respectively.
+
+10. **Additional Settings**: Set appropriate permissions to make the generated binary executable (`chmod`).
+
+**Call for Collaboration 🤝**
+
+I am open to collaborating with engineers and developers on this project. Working together could lead to significant learning opportunities for all involved. If you are interested in contributing to the Terminal Notes Utility, feel free to reach out and join the team!
+
+Looking forward to the upcoming release and continued progress! 🚀
+
+**Let's make note-taking from the terminal even better!** 📝
+
+
 ![Screenshot of the Term Notes application interface](imgs/sshot_termnotes.jpg)
 
 ## Term-Notes Installer 🚀
