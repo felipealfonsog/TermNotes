@@ -52,10 +52,6 @@
 #include <unistd.h>
 #include <ctype.h>
 
-#include <sys/utsname.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-
 #define MAX_NOTES 100
 
 typedef struct {
@@ -64,66 +60,19 @@ typedef struct {
 } Note;
 
 void createFiles() {
-    struct stat st;
-    if (stat("notes.txt", &st) == -1) {
-        FILE *file = fopen("notes.txt", "w");
+    FILE *file = fopen("notes.txt", "r");
+    if (file == NULL) {
+        file = fopen("notes.txt", "w");
         if (file != NULL) {
             fclose(file);
             printf("Created notes.txt\n");
         } else {
             fprintf(stderr, "Unable to create notes.txt\n");
         }
+    } else {
+        fclose(file);
     }
 }
-
-
-
-void moveBinaryAndNotes() {
-    struct utsname sysinfo;
-    if (uname(&sysinfo) == -1) {
-        fprintf(stderr, "Error while retrieving system information\n");
-        return;
-    }
-
-    char command[100];
-    if (strcmp(sysinfo.sysname, "Darwin") == 0) { // Mac OS
-        sprintf(command, "sudo mv term-notes /usr/local/bin/");
-    } else if (strcmp(sysinfo.sysname, "Linux") == 0) { // Linux
-        if (stat("/etc/arch-release", &st) == 0) { // Arch Linux
-            sprintf(command, "sudo mv term-notes /usr/bin/");
-        } else { // Other Linux distros
-            sprintf(command, "sudo mv term-notes /usr/local/bin/");
-        }
-    } else {
-        fprintf(stderr, "Unsupported operating system\n");
-        return;
-    }
-
-    if (system(command) != 0) {
-        fprintf(stderr, "Error moving the binary\n");
-    }
-
-    // Move or create notes.txt based on OS
-    if (strcmp(sysinfo.sysname, "Darwin") == 0) { // Mac OS
-        sprintf(command, "sudo mv notes.txt /usr/local/bin/");
-    } else if (strcmp(sysinfo.sysname, "Linux") == 0) { // Linux
-        if (stat("/etc/arch-release", &st) == 0) { // Arch Linux
-            sprintf(command, "sudo mv notes.txt /usr/bin/");
-        } else { // Other Linux distros
-            sprintf(command, "sudo mv notes.txt /usr/local/bin/");
-        }
-    } else {
-        fprintf(stderr, "Unsupported operating system\n");
-        return;
-    }
-
-    if (system(command) != 0) {
-        fprintf(stderr, "Error moving or creating notes.txt\n");
-    }
-}
-
-
-
 
 void addNote() {
     fflush(stdin);
@@ -132,12 +81,12 @@ void addNote() {
     char content[100];
     fgets(content, sizeof(content), stdin);
 
-    printf("Choose the editor (1. Nano, 2. Vim, 3. Neovim): ");
+    printf("Choose the editor (1. Nano, 2. Vim): ");
     int editorChoice;
-    while (scanf("%d", &editorChoice) != 1 || editorChoice < 1 || editorChoice > 3) {
+    while (scanf("%d", &editorChoice) != 1) {
         while (getchar() != '\n');
-        printf("Invalid editor choice. Please enter a valid number (1, 2, or 3).\n");
-        printf("Choose the editor (1. Nano, 2. Vim, 3. Neovim): ");
+        printf("Invalid editor choice. Please enter a number.\n");
+        printf("Choose the editor (1. Nano, 2. Vim): ");
     }
 
     char tempFileName[20];
@@ -156,8 +105,6 @@ void addNote() {
         sprintf(command, "nano %s", tempFileName);
     } else if (editorChoice == 2) {
         sprintf(command, "vim %s", tempFileName);
-    } else if (editorChoice == 3) {
-        sprintf(command, "neovim %s", tempFileName);
     } else {
         fprintf(stderr, "Invalid editor choice.\n");
         remove(tempFileName);
@@ -195,10 +142,6 @@ void addNote() {
         remove(tempFileName);
     }
 }
-
-
-
-
 
 void editNote() {
     fflush(stdin);
