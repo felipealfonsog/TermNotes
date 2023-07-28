@@ -220,10 +220,10 @@ void addNote() {
             return;
         }
 
-        // Launch the editor with the temporary content file
+        
         system(command);
 
-        // Read the edited content back from the temporary file
+
         tempContentFile = fopen(tempContentPath, "r");
         if (tempContentFile == NULL) {
             fprintf(stderr, "Unable to read temporary file for editing.\n");
@@ -240,10 +240,10 @@ void addNote() {
         }
         fclose(tempContentFile);
 
-        // Remove the temporary content file
+   
         remove(tempContentPath);
 
-        // Update the selected note with the edited content
+       
         file = fopen(notesFilePath, "r+");
         if (file != NULL) {
             int currentIndex = 0;
@@ -491,7 +491,6 @@ void deleteNote() {
 
 
 
-
 void deleteAllNotes() {
     char notesFilePath[PATH_MAX];
     snprintf(notesFilePath, sizeof(notesFilePath), "%s/notes.txt", getConfigPath());
@@ -515,6 +514,8 @@ void deleteAllNotes() {
         printf("Delete all notes operation cancelled.\n");
     }
 }
+
+
 
 void showNote() {
     char notesFilePath[PATH_MAX];
@@ -581,9 +582,6 @@ void showAllNotes() {
 }
 
 
-
-
-
 void showNotesMenu() {
     printf("**** Notes Menu ****\n");
     printf("1. Add a note\n");
@@ -595,6 +593,7 @@ void showNotesMenu() {
     printf("0. Back\n");
     printf("*******************\n");
 }
+
 
 void notesMenu() {
     int option;
@@ -636,6 +635,7 @@ void notesMenu() {
     } while (option != 0);
 }
 
+
 void mainMenu() {
     int option;
     do {
@@ -663,7 +663,6 @@ void mainMenu() {
         }
     } while (option != 0);
 }
-
 
 
 void setFilePermissions(const char *filepath, mode_t permissions) {
@@ -713,7 +712,4 @@ int main() {
 
     return 0;
 }
-
-
-
 
