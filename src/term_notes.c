@@ -179,11 +179,11 @@ void addNote() {
             return;
         }
 
-        // Write the content to the temporary file
+      
         fputs(newNote.content, tempContentFile);
         fclose(tempContentFile);
 
-        // Determine the editor choice
+      
         int editorChoice;
         printf("Choose the editor (1. Nano, 2. Vim, 3. Neovim): ");
         while (scanf("%d", &editorChoice) != 1 || editorChoice < 1 || editorChoice > 3) {
