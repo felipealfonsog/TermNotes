@@ -54,14 +54,9 @@
 #include <sys/utsname.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <limits.h>
 #include <libgen.h>
 
-#if defined(__linux__)
-#include <limits.h>
-#elif defined(__APPLE__)
-#include <libproc.h>
-#include <mach-o/dyld.h>
-#endif
 
 
 #define MAX_NOTES 100
