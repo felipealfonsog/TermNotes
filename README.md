@@ -154,6 +154,7 @@ For users on other Linux distributions and macOS, don't worry! You can still com
 #### Prerequisites
 
 - GCC (GNU Compiler Collection)
+- libutil-linux
 - Nano or Vim text editor
 
 #### Compiling the Source Code
@@ -168,6 +169,12 @@ git clone https://github.com/felipealfonsog/TermNotes.git
 ```
 cd TermNotes/src
 ```
+4. Install Libutil-linux
+
+```
+sudo pacman -S libutil-linux
+```
+
 4. Compile the source code:
 
 ```
