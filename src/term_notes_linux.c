@@ -54,7 +54,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <libgen.h>
-#include <stdint.h>
 
 #define PATH_MAX 4096
 
@@ -67,6 +66,9 @@ char* getBinaryPath() {
     }
     return NULL;
 }
+
+
+
 #define MAX_NOTES 100
 
 typedef struct
@@ -109,24 +111,10 @@ void createFiles()
         fclose(file);
     }
 }
-
-void moveBinaryToDestination()
-{
-
+void moveBinaryToDestination() {
     char binaryPath[PATH_MAX];
-    uint32_t bufferSize = sizeof(binaryPath);
-
-// Agregamos la comprobación para macOS usando __APPLE__ macro
-#if defined(__APPLE__)
-    if (_NSGetExecutablePath(binaryPath, &bufferSize) == 0)
-    {
-        // Código para macOS aquí...
-    }
-#endif
-
     ssize_t len = readlink("/proc/self/exe", binaryPath, sizeof(binaryPath));
-    if (len == -1)
-    {
+    if (len == -1) {
         fprintf(stderr, "Error retrieving binary path.\n");
         return;
     }
@@ -136,16 +124,11 @@ void moveBinaryToDestination()
     char destDirectory[PATH_MAX];
 
 #if defined(__linux__)
-    if (stat("/etc/arch-release", &st) == 0)
-    {
+    if (stat("/etc/arch-release", &st) == 0) {
         snprintf(destDirectory, sizeof(destDirectory), "/usr/local/bin/");
-    }
-    else if (stat("/etc/debian_version", &st) == 0)
-    {
+    } else if (stat("/etc/debian_version", &st) == 0) {
         snprintf(destDirectory, sizeof(destDirectory), "/usr/bin/");
-    }
-    else
-    {
+    } else {
         snprintf(destDirectory, sizeof(destDirectory), "/usr/local/bin/");
     }
 #elif defined(__APPLE__)
@@ -157,15 +140,13 @@ void moveBinaryToDestination()
     char destPath[PATH_MAX];
     snprintf(destPath, sizeof(destPath), "%s/term-notes", destDirectory);
 
-    if (rename(binaryPath, destPath) == 0)
-    {
+    if (rename(binaryPath, destPath) == 0) {
         printf("term-notes binary moved to %s\n", destDirectory);
-    }
-    else
-    {
+    } else {
         fprintf(stderr, "Failed to move term-notes binary to %s\n", destDirectory);
     }
 }
+
 
 void addNote()
 {
@@ -785,8 +766,7 @@ void setFilePermissions(const char *filepath, mode_t permissions)
     }
 }
 
-int main()
-{
+int main() {
     printf("\n\n"
            "▀▀█▀▀ █▀▀ █▀▀█ █▀▄▀█ ░░ ▒█▄░▒█ █▀▀█ ▀▀█▀▀ █▀▀ █▀▀ \n"
            "░▒█░░ █▀▀ █▄▄▀ █░▀░█ ▀▀ ▒█▒█▒█ █░░█ ░░█░░ █▀▀ ▀▀█ \n"
@@ -810,8 +790,8 @@ int main()
     snprintf(notesFilePath, sizeof(notesFilePath), "%s/notes.txt", getConfigPath());
 
     char binaryPath[PATH_MAX];
-    uint32_t bufferSize = sizeof(binaryPath);
-    if (_NSGetExecutablePath(binaryPath, &bufferSize) == 0)
+    ssize_t bufferSize = sizeof(binaryPath);
+    if (readlink("/proc/self/exe", binaryPath, bufferSize) != -1)
     {
         printf("Binary path: %s\n", binaryPath);
 
