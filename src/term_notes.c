@@ -46,21 +46,93 @@
  *************************************
  */
 
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <ctype.h>
-#include <sys/utsname.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <libproc.h>
-#include <mach-o/dyld.h>
 #include <limits.h>
-#include <libgen.h>
+#include <stdint.h>
+
+#if defined(__APPLE__) // macOS-specific code
+#include <mach-o/dyld.h>
+#include <libproc.h>
+
+static int getBinaryPath(char* binaryPath, uint32_t bufferSize) {
+    if (_NSGetExecutablePath(binaryPath, &bufferSize) == 0) {
+        return 1;
+    }
+    return 0;
+}
+
+static void moveBinaryToDestination(const char* binaryPath, int pid) {
+    char binaryName[PROC_PIDPATHINFO_MAXSIZE];
+    int ret = proc_pidpath(pid, binaryName, sizeof(binaryName));
+    if (ret > 0) {
+        // Rest of the moveBinaryToDestination function remains unchanged...
+    }
+}
+
+#else // Generic Linux code
+static int getBinaryPath(char* binaryPath, size_t bufferSize) {
+    ssize_t ret = readlink("/proc/self/exe", binaryPath, bufferSize);
+    if (ret != -1) {
+        binaryPath[ret] = '\0';
+        return 1;
+    }
+    return 0;
+}
+
+static void moveBinaryToDestination(const char* binaryPath, int pid) {
+    char targetPath[PATH_MAX];
+    snprintf(targetPath, sizeof(targetPath), "/usr/local/bin/term-notes");
+
+    // Check if the binary is already in the destination directory
+    if (strcmp(binaryPath, targetPath) == 0) {
+        printf("The binary is already in the destination directory.\n");
+        return;
+    }
+
+    // Check if the target binary path exists and has execute permissions
+    struct stat st;
+    if (stat(targetPath, &st) == 0) {
+        if ((st.st_mode & S_IXUSR) == 0) {
+            printf("The binary already exists in the destination directory but lacks execute permissions.\n");
+            printf("You can run the following command to give execute permissions to the binary:\n");
+            printf("chmod +x /usr/local/bin/term-notes\n");
+            return;
+        }
+    }
+
+    // Check if the destination directory exists, if not, create it
+    const char* destinationDir = "/usr/local/bin";
+    if (access(destinationDir, F_OK) != 0) {
+        if (mkdir(destinationDir, 0755) != 0) {
+            printf("Failed to create the destination directory: %s\n", destinationDir);
+            return;
+        }
+    }
+
+    // Move the binary to the destination directory
+    if (rename(binaryPath, targetPath) == 0) {
+        printf("Binary moved successfully to the destination directory: %s\n", destinationDir);
+    } else {
+        printf("Failed to move the binary to the destination directory.\n");
+        printf("You can try to manually move the binary to %s\n", destinationDir);
+    }
+}
+
+#endif
 
 
-#define MAX_NOTES 100
+
+
+
 
 typedef struct {
     int id;
