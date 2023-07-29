@@ -273,7 +273,7 @@ void addNote()
                 if (currentIndex == id)
                 {
                     fseek(file, -sizeof(Note), SEEK_CUR);
-                    strncpy(note.content, editedContent, sizeof(note.content) - 1);
+                    strcpy(note.content, editedContent); // <-- Corregido aquí
                     fwrite(&note, sizeof(Note), 1, file);
                     break;
                 }
@@ -291,6 +291,7 @@ void addNote()
         fprintf(stderr, "Unable to open the notes file.\n");
     }
 }
+
 
 void editNote()
 {
