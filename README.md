@@ -15,6 +15,63 @@
 [![Vim](https://img.shields.io/badge/--019733?logo=vim)](https://www.vim.org/)
 [![Visual Studio Code](https://img.shields.io/badge/--007ACC?logo=visual%20studio%20code&logoColor=ffffff)](https://code.visualstudio.com/)
 
+🚀 **Excited to Present Version 1.0.4** 🚀
+
+I am thrilled to announce version 1.0.4 of the Terminal Notes Utility! I'm going even further with exciting new features and improvements! 🎉
+
+**Implemented Changes and Features:**
+
+1. **Create Files**: Added `createFiles()` function to create the `term_notes` file in `~/.config` if it doesn't exist.
+
+2. **Move Binary**: Implemented `moveBinaryToDestination()` to move the `term-notes` binary to `/usr/local/bin/` on Linux or `/usr/local/bin/` on macOS.
+
+3. **Add Note**: Implemented `addNote()` function for adding a new note, storing its content in `notes.txt`, and providing options to edit it using `nano`, `vim`, or `neovim`.
+
+4. **Edit Note**: Added `editNote()` function for editing an existing note, displaying a list of available notes, and choosing an editor (`nano`, `vim`, or `neovim`) to edit the selected note's content.
+
+5. **Delete Note**: Implemented `deleteNote()` function to delete an existing note, showing a list of notes, and selecting one to delete.
+
+6. **Delete All Notes**: Added `deleteAllNotes()` function to delete all existing notes from `notes.txt`.
+
+7. **Show Note**: Implemented `showNote()` function for displaying the content of a specific note, requesting the note's ID, and showing its content if found.
+
+8. **Show All Notes**: Added `showAllNotes()` function to display the content of all existing notes in `notes.txt`.
+
+9. **Menus**: Created `showNotesMenu()` and `mainMenu()` functions to display the available options for managing notes and the main menu, respectively.
+
+10. **Additional Settings**: Set appropriate permissions to make the generated binary executable (`chmod`).
+
+**Call for Collaboration 🤝**
+
+I am open to collaborating with engineers and developers on this project. Working together could lead to significant learning opportunities for all involved. If you are interested in contributing to the Terminal Notes Utility, feel free to reach out and join the team!
+
+#### Changes Made for macOS and Linux Separation
+
+To achieve compatibility with both macOS and Linux, the original term_notes.c file has been split into two separate files: term_notes_macos.c and term_notes_linux.c. This separation was necessary to address platform-specific system calls, dependencies, and path handling.
+
+- term_notes_mac.c
+The term_notes_macos.c file includes code that is specific to macOS. This version of the utility uses platform-specific libraries and functions for path handling, file management, and other system calls to ensure seamless execution on macOS.
+
+- term_notes_linux.c
+The term_notes_linux.c file contains code tailored to work on Linux systems. Similar to the macOS version, this file uses Linux-specific libraries and functions for path handling, file management, and other system interactions.
+
+#### Compiling and Running the Utility
+
+To compile the Notes Manager on macOS, use the following command:
+
+```
+gcc -o term-notes-macos src/term_notes_mac.c
+```
+
+And for Linux, use:
+
+```
+gcc -o term-notes-linux src/term_notes_linux.c
+```
+
+**Let's make note-taking from the terminal even better!** 📝
+
+
 ![Screenshot of the Term Notes application interface](imgs/sshot_termnotes.jpg)
 
 ## Term-Notes Installer 🚀
@@ -30,6 +87,9 @@ Hey there! 👋 I'm excited to share that I successfully created a convenient Ba
 💻 Whether you're on Mac OS or Linux, the installer streamlines the process, so you can focus on taking notes without any hassle.
 
 By the way, we had some hurdles along the way. Homebrew didn't accept our project, but screw it! 😄 We persevered and made it happen, developing an easy-to-use installer with some cool ASCII ART!
+
+#### UPDATES: Modification for macOS and Linux
+The original script was enhanced to determine the user's operating system and download the appropriate C source file for compilation. The modification ensures that the Term-Notes utility is compiled with the correct C source file depending on the operating system.
 
 #### To Install it: 
 To install Term-Notes, simply run the installer script available [here](https://github.com/felipealfonsog/TermNotes/raw/main/installer.sh).
@@ -119,6 +179,7 @@ For users on other Linux distributions and macOS, don't worry! You can still com
 #### Prerequisites
 
 - GCC (GNU Compiler Collection)
+- libutil-linux
 - Nano or Vim text editor
 
 #### Compiling the Source Code
@@ -133,6 +194,12 @@ git clone https://github.com/felipealfonsog/TermNotes.git
 ```
 cd TermNotes/src
 ```
+4. Install Libutil-linux
+
+```
+sudo pacman -S libutil-linux
+```
+
 4. Compile the source code:
 
 ```

@@ -1,0 +1,8 @@
+-Bug in Ach Linux:
+[felipe@SDFCSC src]$ gcc -o term-notes term_notes.c
+term_notes.c:57:10: fatal error: libproc.h: No such file or directory
+   57 | #include <libproc.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+
+
