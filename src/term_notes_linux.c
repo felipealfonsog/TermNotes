@@ -27,6 +27,9 @@
  *
  * 4. Move the binary to the system bin directory:
  *    mv term_notes /usr/local/bin/
+ *    
+ *     sudo cp term-notes-linux /usr/local/bin/term-notes
+ * 
  *
  * 5. Exit superuser mode:
  *    exit
