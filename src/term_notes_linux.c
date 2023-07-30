@@ -99,6 +99,9 @@ void createFiles()
         {
             fclose(file);
             printf("Created term_notes file at %s\n", configPath);
+
+            // Give read and write permissions to the owner of the file
+            chmod(configPath, S_IRUSR | S_IWUSR);
         }
         else
         {
@@ -111,6 +114,10 @@ void createFiles()
         fclose(file);
     }
 }
+
+
+
+
 void moveBinaryToDestination() {
     char binaryPath[PATH_MAX];
     ssize_t len = readlink("/proc/self/exe", binaryPath, sizeof(binaryPath));
