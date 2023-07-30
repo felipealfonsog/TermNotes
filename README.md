@@ -66,6 +66,9 @@ Hey there! 👋 I'm excited to share that I successfully created a convenient Ba
 
 By the way, we had some hurdles along the way. Homebrew didn't accept our project, but screw it! 😄 We persevered and made it happen, developing an easy-to-use installer with some cool ASCII ART!
 
+#### UPDATES: Modification for macOS and Linux
+The original script was enhanced to determine the user's operating system and download the appropriate C source file for compilation. The modification ensures that the Term-Notes utility is compiled with the correct C source file depending on the operating system.
+
 #### To Install it: 
 To install Term-Notes, simply run the installer script available [here](https://github.com/felipealfonsog/TermNotes/raw/main/installer.sh).
 
