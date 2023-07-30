@@ -30,7 +30,7 @@ echo "
   ║   Chile                               ║
   ║                                       ║
   ║   Contact: f.alfonso@res-ear.ch       ║
-  ║   Licensed under GNU/GPL and MIT      ║
+  ║   Licensed under MIT                  ║
   ║   GitHub: github.com/felipealfonsog   ║
   ║   LinkedIn:                           ║
   ║   linkedin.com/in/felipealfonsog      ║
@@ -138,16 +138,36 @@ elif [[ $(uname) == "Linux" ]]; then
 fi
 
 
-curl -o term_notes.c https://raw.githubusercontent.com/felipealfonsog/TermNotes/main/src/term_notes.c
+
+if [[ $(uname) == "Darwin" ]]; then
+    source_file_url="https://raw.githubusercontent.com/felipealfonsog/TermNotes/main/src/term_notes_mac.c"
+    source_file_name="term_notes_mac.c"
+elif [[ $(uname) == "Linux" ]]; then
+    source_file_url="https://raw.githubusercontent.com/felipealfonsog/TermNotes/main/src/term_notes_linux.c"
+    source_file_name="term_notes_linux.c"
+else
+    echo "Unsupported operating system. Please install manually, read documentation, and re-run the installer."
+    exit 1
+fi
+
+
+curl -o "$source_file_name" "$source_file_url"
+
+
+gcc -o term-notes "$source_file_name"
+
+
+
+
+# curl -o term_notes.c https://raw.githubusercontent.com/felipealfonsog/TermNotes/main/src/term_notes.c
 
 # Compile the program and rename it to term-notes
-gcc -o term-notes term_notes.c
+# gcc -o term-notes term_notes.c
 
 
 if [[ $(uname) == "Darwin" ]]; then
     sudo mv term-notes /usr/local/bin/
 
-    # Check if executable permissions need to be set on macOS
     if [[ ! -x /usr/local/bin/term-notes ]]; then
         sudo chmod +x /usr/local/bin/term-notes
     fi

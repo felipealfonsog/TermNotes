@@ -57,6 +57,9 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <libgen.h>
+#include <errno.h>
+
+
 
 #define PATH_MAX 4096
 
@@ -91,23 +94,21 @@ char *getConfigPath()
 
 void createFiles()
 {
-    char configPath[PATH_MAX];
-    snprintf(configPath, sizeof(configPath), "%s/term_notes", getConfigPath());
+    char notesFilePath[PATH_MAX];
+    snprintf(notesFilePath, sizeof(notesFilePath), "%s/notes.txt", getConfigPath());
     struct stat st;
-    FILE *file = fopen(configPath, "rb");
+    FILE *file = fopen(notesFilePath, "rb");
     if (file == NULL)
     {
-        file = fopen(configPath, "wb");
+        file = fopen(notesFilePath, "wb");
         if (file != NULL)
         {
             fclose(file);
-            printf("Created term_notes file at %s\n", configPath);
-
-            chmod(configPath, S_IRUSR | S_IWUSR);
+            printf("Created notes file at %s\n", notesFilePath);
         }
         else
         {
-            fprintf(stderr, "Unable to create term_notes file.\n");
+            fprintf(stderr, "Error creating notes file: %s\n", strerror(errno));
             return;
         }
     }
