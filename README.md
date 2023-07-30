@@ -17,7 +17,7 @@
 
 🚀 **Excited to Present Version 1.0.4** 🚀
 
-I am thrilled to announce that soon I'll be presenting version 1.0.4 of the Terminal Notes Utility! Currently, we are at v.1.0.3.8, and I'm going even further with exciting new features and improvements! 🎉
+I am thrilled to announce version 1.0.4 of the Terminal Notes Utility! I'm going even further with exciting new features and improvements! 🎉
 
 **Implemented Changes and Features:**
 
@@ -45,7 +45,29 @@ I am thrilled to announce that soon I'll be presenting version 1.0.4 of the Term
 
 I am open to collaborating with engineers and developers on this project. Working together could lead to significant learning opportunities for all involved. If you are interested in contributing to the Terminal Notes Utility, feel free to reach out and join the team!
 
-Looking forward to the upcoming release and continued progress! 🚀
+#### Changes Made for macOS and Linux Separation
+
+To achieve compatibility with both macOS and Linux, the original term_notes.c file has been split into two separate files: term_notes_macos.c and term_notes_linux.c. This separation was necessary to address platform-specific system calls, dependencies, and path handling.
+
+- term_notes_mac.c
+The term_notes_macos.c file includes code that is specific to macOS. This version of the utility uses platform-specific libraries and functions for path handling, file management, and other system calls to ensure seamless execution on macOS.
+
+- term_notes_linux.c
+The term_notes_linux.c file contains code tailored to work on Linux systems. Similar to the macOS version, this file uses Linux-specific libraries and functions for path handling, file management, and other system interactions.
+
+#### Compiling and Running the Utility
+
+To compile the Notes Manager on macOS, use the following command:
+
+```
+gcc -o term-notes-macos src/term_notes_mac.c
+```
+
+And for Linux, use:
+
+```
+gcc -o term-notes-linux src/term_notes_linux.c
+```
 
 **Let's make note-taking from the terminal even better!** 📝
 
