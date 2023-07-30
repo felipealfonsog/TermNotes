@@ -17,7 +17,7 @@
 
 🚀 **Excited to Present Version 1.0.4** 🚀
 
-I am thrilled to announce version 1.0.4 of the Terminal Notes Utility! I'm going even further with exciting new features and improvements! 🎉
+I am thrilled to announce version 1.0.4 of the Terminal Notes Utility! I'm going even further with exciting new features and improvements! Now, Neovim is part of the options! 
 
 **Implemented Changes and Features:**
 
