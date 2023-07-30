@@ -99,7 +99,7 @@ void createDirectories() {
 }
 
 void installDependencies() {
-    // Verificar e instalar dependencias (Vim, Nano)
+   
     const char* vimCommand = "which vim > /dev/null";
     const char* nanoCommand = "which nano > /dev/null";
 

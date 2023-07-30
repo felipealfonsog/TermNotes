@@ -155,7 +155,7 @@ void addNote() {
         Note note;
         int lastID = 0;
 
-        // Read notes from the file and find the last ID
+    
         while (fread(&note, sizeof(Note), 1, file) == 1) {
             lastID = note.id;
         }
@@ -171,7 +171,7 @@ void addNote() {
         fclose(file);
         printf("Note added successfully with ID: %d\n", id);
 
-        // Create a temporary file for the selected note's content
+    
         char tempContentPath[PATH_MAX];
         snprintf(tempContentPath, sizeof(tempContentPath), "%s/%d.txt", getConfigPath(), id);
         FILE *tempContentFile = fopen(tempContentPath, "w");
@@ -318,12 +318,12 @@ void editNote() {
             if (currentIndex != choice) {
                 fwrite(&note, sizeof(Note), 1, tempFile);
             } else {
-                // Store the selected note temporarily for editing
+               
                 Note selectedNote = note;
 
                 char command[100];
 
-                // Create a temporary file to hold the content of the selected note
+    
                 char tempNoteFilePath[PATH_MAX];
                 snprintf(tempNoteFilePath, sizeof(tempNoteFilePath), "%s/temp_note.txt", getConfigPath());
                 FILE *tempNoteFile = fopen(tempNoteFilePath, "w");
@@ -337,7 +337,6 @@ void editNote() {
                 fputs(selectedNote.content, tempNoteFile);
                 fclose(tempNoteFile);
 
-                // Choose the editor and command to open the temporary note file
                 printf("Choose the editor (1. Nano, 2. Vim, 3. Neovim): ");
                 int editorChoice;
                 while (scanf("%d", &editorChoice) != 1 || editorChoice < 1 || editorChoice > 3) {
@@ -360,10 +359,10 @@ void editNote() {
                     return;
                 }
 
-                // Launch the editor with the temporary note file
+         
                 system(command);
 
-                // Read the edited content from the temporary note file
+             
                 FILE *editedNoteFile = fopen(tempNoteFilePath, "r");
                 if (editedNoteFile == NULL) {
                     fprintf(stderr, "Unable to read the edited note file.\n");
@@ -377,16 +376,15 @@ void editNote() {
                 long size = ftell(editedNoteFile);
                 fseek(editedNoteFile, 0, SEEK_SET);
 
-                // Update the content of the selected note
+
                 char editedContent[size];
                 fread(editedContent, 1, size, editedNoteFile);
                 fclose(editedNoteFile);
                 strncpy(selectedNote.content, editedContent, sizeof(selectedNote.content));
 
-                // Write the modified note to the temporary file
+             
                 fwrite(&selectedNote, sizeof(Note), 1, tempFile);
 
-                // Remove the temporary note file
                 remove(tempNoteFilePath);
             }
         }
@@ -653,7 +651,7 @@ void mainMenu() {
 
         switch (option) {
             case 1:
-                notesMenu(); // Llamada a la función notesMenu() para gestionar las notas
+                notesMenu(); 
                 break;
             case 0:
                 printf("Goodbye.\n");
