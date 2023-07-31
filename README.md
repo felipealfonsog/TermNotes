@@ -72,7 +72,7 @@ gcc -o term-notes-linux src/term_notes_linux.c
 **Let's make note-taking from the terminal even better!** 📝
 
 
-![Screenshot of the Term Notes application interface](imgs/sshot_termnotes.jpg)
+![Screenshot of the Term Notes application interface](imgs/sshot-v.1.0.4.jpg)
 
 ## Term-Notes Installer 🚀
 
