@@ -161,7 +161,7 @@ gcc -o term-notes "$source_file_name"
 
 # curl -o term_notes.c https://raw.githubusercontent.com/felipealfonsog/TermNotes/main/src/term_notes.c
 
-# Compile the program and rename it to term-notes
+ 
 # gcc -o term-notes term_notes.c
 
 
@@ -190,7 +190,8 @@ fi
 
 
 
-rm -rf term_notes.c
+# rm -rf term_notes.c
+rm -rf "$source_file_name"
 
 echo "-------------------------------------------------------------------"
 
