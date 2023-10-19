@@ -1,0 +1,16 @@
+# PAYME.yaml is an open source file format for financially supporting open source contributors
+# https://payme-yaml.org
+
+paypal: felipe.alfonso.glz@gmail.com # EMAIL-ADDRESS
+#bitcoin: # BITCOIN-ADDRESS
+
+# .github/FUNDING.yml compatibility
+#community_bridge: PROJECT-NAME
+github: felipealfonsog
+#issuehunt: USERNAME
+#ko_fi: USERNAME
+#liberapay: USERNAME
+#open_collective: USERNAME
+#otechie: USERNAME
+patreon: felipealfonsogl
+#tidelift: PLATFORM-NAME/PACKAGE-NAME
