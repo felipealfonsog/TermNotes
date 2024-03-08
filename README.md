@@ -1,7 +1,7 @@
 
 ### Term Notes 📋📌
 
-"TermNotes" is a command-line note management utility designed to help you organize your ideas and reminders efficiently. It allows you to create, display, update, and delete notes directly from the terminal, providing you with a fast and straightforward workflow. With "TermNotes," you can keep track of your thoughts and important tasks, all within your favorite command-line environment. Simplify your life and enhance your productivity with this minimalist yet powerful tool.
+"TermNotes"* is a command-line note management utility designed to help you organize your ideas and reminders efficiently. It allows you to create, display, update, and delete notes directly from the terminal, providing you with a fast and straightforward workflow. With "TermNotes," you can keep track of your thoughts and important tasks, all within your favorite command-line environment. Simplify your life and enhance your productivity with this minimalist yet powerful tool.
 
 ![Version](https://img.shields.io/github/release/felipealfonsog/TermNotes.svg?style=flat&color=blue)
 ![Main Language](https://img.shields.io/github/languages/top/felipealfonsog/TermNotes.svg?style=flat&color=blue)
@@ -14,6 +14,8 @@
 
 [![Vim](https://img.shields.io/badge/--019733?logo=vim)](https://www.vim.org/)
 [![Visual Studio Code](https://img.shields.io/badge/--007ACC?logo=visual%20studio%20code&logoColor=ffffff)](https://code.visualstudio.com/)
+
+<sub>* This is currently an experimental phase where the primary focus is on making the system functional and establishing a practical and logical pathway that aligns with both my vision and the project's goals. It might contain errors, bugs, etc. Many other non-core elements of the project are considered secondary.</sub>
 
 🚀 **Excited to Present Version 1.0.4** 🚀
 
@@ -145,8 +147,8 @@ Please note that if you encounter any issues or have suggestions, feel free to r
 
 Thank you for joining me on this journey, and I hope Term-Notes brings value to your life and workflow. Let's continue making technology accessible and enjoyable for everyone!
 
-### Installation
-### Via AUR using YAY
+#### Installation
+#### Via AUR using YAY
 
 [![AUR](https://img.shields.io/aur/version/term-notes.svg)](https://aur.archlinux.org/packages/term-notes)
 
