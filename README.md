@@ -74,7 +74,7 @@ gcc -o term-notes-linux src/term_notes_linux.c
 
 ![Screenshot of the Term Notes application interface](imgs/sshot-v.1.0.4.jpg)
 
-## Term-Notes Installer 🚀
+#### Term-Notes Installer 🚀
 
 [![Installer Success](https://img.shields.io/badge/Installer-Success-orange)](https://github.com/felipealfonsog/TermNotes)
 
@@ -145,7 +145,7 @@ Please note that if you encounter any issues or have suggestions, feel free to r
 
 Thank you for joining me on this journey, and I hope Term-Notes brings value to your life and workflow. Let's continue making technology accessible and enjoyable for everyone!
 
-## Installation
+### Installation
 ### Via AUR using YAY
 
 [![AUR](https://img.shields.io/aur/version/term-notes.svg)](https://aur.archlinux.org/packages/term-notes)
