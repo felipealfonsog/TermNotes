@@ -17,6 +17,11 @@
 
 <sub>* This is currently an experimental phase where the primary focus is on making the system functional and establishing a practical and logical pathway that aligns with both my vision and the project's goals. It might contain errors, bugs, etc. Many other non-core elements of the project are considered secondary.</sub>
 
+#### Screenshot 
+
+![Screenshot of the Term Notes application interface](imgs/sshot-v.1.0.4.jpg)
+
+#
 
 #### Installation
 #### Via AUR using YAY
@@ -98,7 +103,6 @@ gcc -o term-notes-linux src/term_notes_linux.c
 **Let's make note-taking from the terminal even better!** 📝
 
 
-![Screenshot of the Term Notes application interface](imgs/sshot-v.1.0.4.jpg)
 
 #### Term-Notes Installer 🚀
 
