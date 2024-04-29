@@ -175,7 +175,7 @@ Please note that if you encounter any issues or have suggestions, feel free to r
 
 Thank you for joining me on this journey, and I hope Term-Notes brings value to your life and workflow. Let's continue making technology accessible and enjoyable for everyone!
 
-
+<!-- 
 #### Project Availability Update: Homebrew Rejection
 
 [![Homebrew Rejected](https://img.shields.io/badge/Homebrew-Not%20Accepted-yellow)](https://github.com/TermNotes)
@@ -185,6 +185,7 @@ I regret to inform you that the project, Term Notes, has been rejected by Homebr
 Term Notes can still be installed through the YAY package manager, ensuring Arch Linux users can enjoy the benefits of the note-taking application. Simply follow the instructions provided in the project's documentation to install Term Notes using YAY.
 
 For users on other Linux distributions and macOS, don't worry! You can still compile and use the binary file from the cloned GitHub project repository. Although it won't be installed system-wide, you can run the application directly from the project folder. I apologize for any inconvenience this may cause.
+-->
 
 #### Prerequisites
 
