@@ -46,7 +46,7 @@ This command will automatically fetch the package from AUR and handle the instal
 
 #
 
-🚀 **Excited to Present Version 1.0.4** 🚀
+🚀 **Excited to Present New Features** 🚀
 
 I am thrilled to announce version 1.0.4 of the Terminal Notes Utility! I'm going even further with exciting new features and improvements! Now, Neovim is part of the options! 
 
