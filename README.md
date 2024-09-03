@@ -12,7 +12,7 @@
 [![GPL license](https://img.shields.io/badge/License-GPL-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 -->
 
-[![Vim Powered](https://img.shields.io/badge/Vim-Powered-%2311AB00.svg?style=plastic&logo=vim&logoColor=white)](https://www.vim.org)
+[![Vim](https://badgen.net/badge/icon/vim?icon=vim&label=)](https://www.vim.org)
 [![VSCode Powered](https://img.shields.io/badge/VSCode-Powered-%23007ACC.svg?style=plastic&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)
 
 
