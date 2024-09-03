@@ -12,8 +12,11 @@
 [![GPL license](https://img.shields.io/badge/License-GPL-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 -->
 
-[![Vim Powered](https://img.shields.io/badge/Vim-Powered-%2311AB00.svg?style=plastic&logo=vim&logoColor=white)](https://www.vim.org)
-[![Visual Studio Code](https://badgen.net/badge/icon/Visual%20Studio%20Code?icon=visualstudio&label=)](https://code.visualstudio.com/)
+[![Vim Powered](https://img.shields.io/badge/Vim-Powered-%2311AB00.svg?logo=vim&logoColor=white)](https://www.vim.org)
+[![VS Code Powered](https://img.shields.io/badge/VS%20Code-Powered-%23007ACC.svg?logo=visualstudiocode&logoColor=white)](https://code.visualstudio.com/)
+
+
+
 
 <sub>* This is currently an experimental phase where the primary focus is on making the system functional and establishing a practical and logical pathway that aligns with both my vision and the project's goals. It might contain errors, bugs, etc. Many other non-core elements of the project are considered secondary.</sub>
 
